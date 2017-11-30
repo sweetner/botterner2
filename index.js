@@ -1,11 +1,9 @@
 const Discord = require('discord.js');
 const yt = require('ytdl-core');
 var bot = new Discord.Client();
-const TOKEN = "MzgzMzMzNzc0ODY5Mzk3NTA0.DPjFsg.I5VgIzHL6lXsqg0BP5SCazaQ0uE";
 const PREFIX = "s!";
 
 var commands = ["help", "ping", "reasonswhy", "mentionme", "embed"];
-var i = 0;
 var mute = 0;
 var mutechannel = 0;
 var solomute = 0;
