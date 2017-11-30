@@ -273,7 +273,7 @@ bot.on("message", function(message) {
     
   case "solomute":
    if (message.author.id == 109378124898136064 || message.author.id == 290154978742632449) {
-      if (solomute == 1) {solomute = 1; message.reply("unmuted."); return;}
+      if (solomute == 1) {solomute = 0; message.reply("unmuted."); return;}
       solomuteauthor = message.mentions.users.first();
       if (!solomuteauthor) {message.reply("Please mention a user!");
       } else if (solomuteauthor.id == 109378124898136064 || solomuteauthor.id == 290154978742632449) {
