@@ -302,10 +302,10 @@ bot.on("message", function(message) {
     }break;
    
   case "opgg":
-    let region = args[1].toLowerCase;
+    let region = args[1];
     let summonername = args[2];
     if (args[1] == "eune" || args[1] == "euw" || args[1] == "na" || args [1] == "tr" || args[1] == "ru") {
-      message.channel.send("There is "+summonername+"'s op.gg: \n" + "http://"+region+".op.gg/summoner/userName="+args[2]);
+      message.channel.send("There is "+summonername+"'s op.gg: \n" + "http://"+region+".op.gg/summoner/userName="+summonername);
     } else {
       message.reply("Make sure you enter a proper region (eune,euw,na,tr,ru) \ns!opgg <region> <summonername>");
     } break;
