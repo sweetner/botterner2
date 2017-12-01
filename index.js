@@ -305,9 +305,9 @@ bot.on("message", function(message) {
     let region = args[1];
     let summonername = args[2];
     let spacecheck = args[3];
-    if (spacecheck == " ") {
+    if (spacecheck) {
       message.reply("Please remove any spaces from your summoner name!");
-    if (args[1] == "eune" || args[1] == "euw" || args[1] == "na" || args [1] == "tr" || args[1] == "ru") {
+    } else if (args[1] == "eune" || args[1] == "euw" || args[1] == "na" || args [1] == "tr" || args[1] == "ru") {
       message.channel.send("There is "+summonername+"'s op.gg: \n" + "http://"+region+".op.gg/summoner/userName="+summonername);
     } else {
       message.reply("Make sure you enter a proper region (eune,euw,na,tr,ru) \ns!opgg <region> <summonername>");
