@@ -49,7 +49,8 @@ bot.on("message", function(message) {
       "\n **s!?** -> ?????? (also mentionable) \n" +
       "\n **s!stop** -> (mentionable) ask someone to stop. \n" + 
       "\n **s!roll** -> rolls 2 die *hehe* \n" +
-      "\n **s!ratewaifu** <mention> -> will rate a waifu out of 10 \n"
+      "\n **s!ratewaifu** <mention> -> will rate a waifu out of 10 \n" +
+      "\n **s!opgg <server> <summonername>** -> sends your op.gg link. \n"
       , true)
       .addField("\n **Voice chat commands:** ",
       "\n **s!play <youtube link>** -> Joins a channel and plays a youtube video link. exits when done. \n "
@@ -299,6 +300,19 @@ bot.on("message", function(message) {
     } else {
       message.channel.send("I rate "+waifu+" **"+Math.floor(Math.random()*11)+"/10**, :blush: :blue_heart: ");
     }break;
+   
+  case "opgg":
+    let region = args[1].toLowerCase;
+    let summonername = args[2];
+    if (args[1] == "eune" || args[1] == "euw" || args[1] == "na" || args [1] == "tr" || args[1] == "ru") {
+      message.channel.send("There is "+summonername+"'s op.gg: \n" + "http://"+region+".op.gg/summoner/userName="+args[2]);
+    } else {
+      message.reply("Make sure you enter a proper region (eune,euw,na,tr,ru) \ns!opgg <region> <summonername>");
+    } break;
+    
+      
+      
+   
 
 }});
 bot.login(process.env.BOT_TOKEN);
