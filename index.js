@@ -39,6 +39,7 @@ bot.on("message", function(message) {
       "**s!help** -> shows a list of commands\n" +
       "\n **s!owner** -> Sends info about me! the creator of the bot! \n" +
       "\n **s!ping** -> pong \n" +
+      "\n **s!pong** -> ping \n" +
       "\n **s!reasonswhy** -> 3 reasons why  \n" +
       "\n **s!mentionme** -> the bot will mention you \n" +
       "\n **s!embed** -> sends an embeded msg example \n" +
@@ -313,7 +314,9 @@ bot.on("message", function(message) {
       message.reply("Make sure you enter a proper region (eune,euw,na,tr,ru) \ns!opgg <region> <summonername>");
     } break;
     
-      
+    case "pong":
+       message.channel.send("Ping!");
+      break;
       
    
 
