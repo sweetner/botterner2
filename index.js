@@ -71,9 +71,7 @@ bot.on("message", function(message) {
       message.channel.send(embed);
       break;
   case "ping":
-      var timeout = setTimeout (function () { 
-      message.channel.send("Pong")
-       }, 10 * 1000); 
+      message.channel.send("Pong!");
       break;
   case "reasonswhy":
         message.channel.send("Temporary unavailable");
@@ -276,20 +274,40 @@ bot.on("message", function(message) {
     
   case "solomute":
    if (message.author.id == 109378124898136064 || message.author.id == 290154978742632449) {
-      if (solomute == 1) {solomute = 0; message.reply("unmuted."); return;}
-      solomuteauthor = message.mentions.users.first();
-      if (!solomuteauthor) {message.reply("Please mention a user!");
-      } else if (solomuteauthor.id == 109378124898136064 || solomuteauthor.id == 290154978742632449) {
-      message.reply("You cant mute that much sweetness...");
-      } else if (solomute == 0) {
-      solomute = 1;
-      message.channel.send(solomuteauthor+"is now muted");
-      } else if (solomute == 1) {
-      solomute = 0;
-      message.channel.send(solomuteauthor +"is now unmuted.")
-   }} else {
-      message.channel.send("You arent sweet enough to use this command");
-    }break;
+    if (solomute == 1) {solomute = 0; message.reply("Unmuted."); return;}
+    solomuteauthor = message.mentions.users.first();
+    if (!solomuteauthor) {message.reply("Please mention a user!");
+    } else if (solomuteauthor.id == 109378124898136064 || solomuteauthor.id == 290154978742632449) {
+        message.reply("You cant mute that much sweetness...");
+    } else if (solomute == 0) {
+      let mutetime = args[2]
+      if (mutetime) {
+         message.channel.send(solomuteauthor+" Has been muted for "+ args[2] +" minutes.");
+         solomute = 1;
+         var timeout = setTimeout (function () { 
+         message.channel.send(solomuteauthor+" Has been unmuted after "+ args[2] +" minutes.");
+         solomute = 0;
+         }, args[2] * 1000 * 60); 
+      }
+      else 
+      {
+        message.channel.send(solomuteauthor+" Has been muted until further notice");
+        solomute = 1;
+      }
+      } 
+      else if (solomute == 1) 
+      {
+         solomute = 0;
+        message.channel.send(solomuteauthor +"is now unmuted.")
+      }
+
+   } 
+   else 
+   {
+    message.channel.send("You arent sweet enough to use this command");
+   }
+    break;
+
 
 
   case "ratewaifu":
