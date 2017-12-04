@@ -71,9 +71,7 @@ bot.on("message", function(message) {
       message.channel.send(embed);
       break;
   case "ping":
-          const m = await message.channel.send("Ping?");
-          m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-          }
+          message.channel.send("Pong");
       break;
   case "reasonswhy":
         message.channel.send("Temporary unavailable");
