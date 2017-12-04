@@ -71,7 +71,9 @@ bot.on("message", function(message) {
       message.channel.send(embed);
       break;
   case "ping":
-       message.channel.send("Pong!");
+      var timeout = setTimeout (function () { 
+      message.channel.send("Pong")
+       }, 10 * 1000); 
       break;
   case "reasonswhy":
         message.channel.send("Temporary unavailable");
