@@ -71,7 +71,7 @@ bot.on("message", function(message) {
       message.channel.send(embed);
       break;
   case "ping":
-      message.channel.send("Pong!");
+      message.channel.send("Pong! \n" + new Date().getTime() - message.createdTimestamp + " ms");
       break;
   case "reasonswhy":
         message.channel.send("Temporary unavailable");
