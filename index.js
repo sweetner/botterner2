@@ -318,6 +318,11 @@ bot.on("message", function(message) {
        message.channel.send("Ping!");
       break;
       
+     case "familytree":
+    message.channel.send("So its a long story, sit down and listen...\n", {
+    file:"https://cdn.discordapp.com/attachments/349738470333218816/387227145241362433/guardiansinanutshell.png"});
+    break;
+      
    
 
 }});
