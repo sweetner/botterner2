@@ -74,7 +74,7 @@ bot.on("message", function(message) {
       message.channel.send("Pong!");
       break;
   case "reasonswhy":
-        message.channel.send("Temporary unavailable");
+        message.channel.send("We all have our own reasons");
       
       break;
   case "mentionme":
