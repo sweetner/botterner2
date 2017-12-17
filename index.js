@@ -40,7 +40,7 @@ bot.on("message", function(message) {
       "\n **s!owner** -> Sends info about me! the creator of the bot! \n" +
       "\n **s!ping** -> pong \n" +
       "\n **s!pong** -> ping \n" +
-      "\n **s!reasonswhy** -> 3 reasons why  \n" +
+      "\n **s!reasonswhy** -> Gives a reason  \n" +
       "\n **s!mentionme** -> the bot will mention you \n" +
       "\n **s!embed** -> sends an embeded msg example \n" +
       "\n **s!pizza** -> sends a picture of a pizza! extra cheese included! \n" +
