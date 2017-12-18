@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const yt = require('ytdl-core');
 var bot = new Discord.Client();
 const PREFIX = "s!";
+//let XP = JSON.parse(fs.readFileSync('./XP.json', 'utf8'));
 
 var commands = ["help", "ping", "reasonswhy", "mentionme", "embed"];
 var mute = 0;
@@ -16,6 +17,15 @@ bot.on('ready', () => {
 
 bot.on("message", function(message) {
   if (message.author.equals(bot.user)) return;
+  
+/*  let userData = XP[msg.author.id];
+	if (!userData) userData = {XP: 0, level: 0};
+	
+	let userXP = XP[msg.author.id] ? XP[msg.author.id].XP : 0;
+	let curLevel = Math.floor(0.1 * Math.sqrt(userXP));
+	if (curLevel > userData.level) {
+		userData.level = curLevel;
+		msg.reply(`You have lvled ^ to lvl **${curLevel}**!`); */
 
   if (mute == 1){ 
     if (message.channel.id == (mutechannel.id)) {
