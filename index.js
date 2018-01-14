@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const yt = require('ytdl-core');
 var bot = new Discord.Client();
 const PREFIX = "s!";
+var fs = require('file-system');
 let XP = JSON.parse(fs.readFileSync('./XP.json', 'utf8'));
 
 var commands = ["help", "ping", "reasonswhy", "mentionme", "embed"];
