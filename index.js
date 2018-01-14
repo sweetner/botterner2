@@ -2,8 +2,6 @@ const Discord = require('discord.js');
 const yt = require('ytdl-core');
 var bot = new Discord.Client();
 const PREFIX = "s!";
-var fs = require('file-system');
-let XP = JSON.parse(fs.readFileSync('./XP.json', 'utf8'));
 
 var commands = ["help", "ping", "reasonswhy", "mentionme", "embed"];
 var mute = 0;
@@ -18,16 +16,6 @@ bot.on('ready', () => {
 
 bot.on("message", function(message) {
   if (message.author.equals(bot.user)) return;
-  
-  let userData = XP[message.author.id];
-	if (!userData) userData = {XP: 0, level: 0};
-	
-	let userXP = XP[message.author.id] ? XP[message.author.id].XP : 0;
-	let curLevel = Math.floor(0.1 * Math.sqrt(userXP));
-	if (curLevel > userData.level) {
-		userData.level = curLevel;
-    message.reply(`You have lvled ^ to lvl **${curLevel}**!`);
-  }
 
   if (mute == 1){ 
     if (message.channel.id == (mutechannel.id)) {
@@ -52,7 +40,7 @@ bot.on("message", function(message) {
       "\n **s!owner** -> Sends info about me! the creator of the bot! \n" +
       "\n **s!ping** -> pong \n" +
       "\n **s!pong** -> ping \n" +
-      "\n **s!reasonswhy** -> Gives a reason  \n" +
+      "\n **s!reasonswhy** -> 3 reasons why  \n" +
       "\n **s!mentionme** -> the bot will mention you \n" +
       "\n **s!embed** -> sends an embeded msg example \n" +
       "\n **s!pizza** -> sends a picture of a pizza! extra cheese included! \n" +
@@ -86,7 +74,7 @@ bot.on("message", function(message) {
       message.channel.send("Pong!");
       break;
   case "reasonswhy":
-        message.channel.send("We all have our own reasons");
+        message.channel.send("Temporary unavailable");
       
       break;
   case "mentionme":
@@ -355,11 +343,6 @@ bot.on("message", function(message) {
     message.channel.send("So its a long story, sit down and listen...\n", {
     file:"https://cdn.discordapp.com/attachments/349738470333218816/387227145241362433/guardiansinanutshell.png"});
     break;
-  case "xp":
-      let mentioned = message.mentions.users.first();
-      XP[mentioned.id] += args[2];
-      message.channel.send("I've raised "+mentioned+"'s xp by "+args[2]);
-      break;
       
    
 
