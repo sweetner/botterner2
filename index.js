@@ -32,7 +32,7 @@ bot.on("message", function(message) {
 	let curLevel = Math.floor(0.1 * Math.sqrt(userXP));
 	if (curLevel > XP[message.author.id].level) {
 		XP[message.author.id].level = curLevel;
-    message.reply(`Great job on wasting your time gaining a useless rank that would not affect your life in any way shape or form.\nBtw, you leveled up to level **${curLevel}**`); 
+   //message.reply(`Great job on wasting your time gaining a useless rank that would not affect your life in any way shape or form.\nBtw, you leveled up to level **${curLevel}**`); 
   }
 
   if (XP[message.author.id].cooldown == 1)
