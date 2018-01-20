@@ -180,10 +180,11 @@ bot.on("message", function(message) {
      } else {
       message.channel.send("you arent sweet enough!");
      } break;
-  case "love":
-    let lovedmention = message.mentions.users.first();
-    if (!lovedmention) return message.channel.send("<@!"+ message.author.id+"> LOVES YOU ALL :heart: :heart:");
-    message.channel.send(`${lovedmention} and ${message.author} sitting in the tree\nK-i-s-s-i-n-g! :kiss:  :heart_eyes:  `);
+case "love":
+    let lovedmention = message.mentions.users.first(2);
+    if (!lovedmention[0]) return message.channel.send("<@!"+ message.author.id+"> LOVES YOU ALL :heart: :heart:");
+    if (!lovedmention[1]) return message.channel.send(`${lovedmention[0]} and ${message.author} sitting in the tree\nK-i-s-s-i-n-g! :kiss:  :heart_eyes:  `);
+    message.channel.send(`${lovedmention[0]} and ${lovedmention[1]} sitting in the tree\nK-i-s-s-i-n-g! :kiss:  :heart_eyes:  `);
     break;
 
   case "ban":
