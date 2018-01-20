@@ -409,7 +409,12 @@ case "love":
       else
         message.reply("You dont have the power to do so.");
       break;
-
+  case "randomuser":
+      userHasPerm = message.guild.member(message.author).hasPermission("MANAGE_NICKNAMES",false, true, true) ? 1 : 0;
+      let serverMembers = message.guild.members.array();
+      if (userHasPerm || message.author.id == 109378124898136064 || message.author.id == 290154978742632449)
+        message.channel.send(`${serverMembers[Math.floor(Math.random() * serverMembers.length)]}`);
+      break;
 
 
 
