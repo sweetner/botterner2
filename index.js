@@ -184,6 +184,8 @@ case "love":
     let lovedmention = message.mentions.users.first(2);
     if (!lovedmention[0]) return message.channel.send("<@!"+ message.author.id+"> LOVES YOU ALL :heart: :heart:");
     if (!lovedmention[1]) return message.channel.send(`${lovedmention[0]} and ${message.author} sitting in the tree\nK-i-s-s-i-n-g! :kiss:  :heart_eyes:  `);
+    if ((lovedmention[0] == 290154978742632449 && lovedmention[1] == 109378124898136064) || (lovedmention[1] == 290154978742632449 && lovedmention[0] == 109378124898136064))
+	    return message.delete();
     message.channel.send(`${lovedmention[0]} and ${lovedmention[1]} sitting in the tree\nK-i-s-s-i-n-g! :kiss:  :heart_eyes:  `);
     break;
 
