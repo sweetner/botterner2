@@ -312,7 +312,7 @@ case "love":
     } break;
     
   case "solomute":
-   if (message.author.id == 109378124898136064 || message.author.id == 290154978742632449) {
+   if (message.author.id == 109378124898136064 || message.author.id == 290154978742632449 || message.author.id == 285842307440443403) {
     if (solomute == 1) {solomute = 0; message.reply("Unmuted."); return;}
     solomuteauthor = message.mentions.users.first();
     if (!solomuteauthor) {message.reply("Please mention a user!");
