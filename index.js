@@ -14,7 +14,7 @@ var solomuteauthor =0;
 
 bot.on('ready', () => {
   console.log('I am ready!');
-  bot.user.setGame("s!help for commands!");
+  bot.user.setActivity("s!help for commands!");
 });
 
 bot.on("message", function(message) {
@@ -254,7 +254,7 @@ case "love":
       message.reply(number1 + number2);
       break;
 
-  case "play":    
+  /* case "play":    
       const voiceChannel = message.member.voiceChannel;
       if (!voiceChannel){
         return message.channel.sendMessage(":x: You must be in a voice channel first!");
@@ -274,7 +274,7 @@ case "love":
            console.error(e);
          });
       });
-      break;
+      break; */
 
 
   case "color":
