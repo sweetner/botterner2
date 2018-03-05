@@ -415,6 +415,25 @@ case "love":
       if (userHasPerm || message.author.id == 109378124898136064 || message.author.id == 290154978742632449)
         message.channel.send(`${serverMembers[Math.floor(Math.random() * serverMembers.length)]}`);
       break;
+  case "profile":
+      	    if (!message.mentions.users.first())
+                user = message.author;
+            let nickname = message.guild.member(user).nickname ? message.guild.member(user).nickname : "No nickname";
+            let role = message.guild.member(user).highestRole ? message.guild.member(user).highestRole : "No role";
+            let lastmsg = message.guild.member(user).lastMessage ? message.guild.member(user).lastMessage : `${user.tag} sent no messages lately`;
+            var embed = new Discord.RichEmbed()
+                .setTitle(`Profile of ${user.tag}`) //true means same line until one inst true,starts new line
+                .setThumbnail(user.avatarURL.replace(`2048`, `64`))
+                .addField("Account creation date", `${user.createdAt.toUTCString()}`, true)
+                .addField("Server join date", `${message.guild.member(user).joinedAt.toUTCString()}`, false)
+                .addField("Nickname", nickname, false)
+                .addField("Highest role", role, true)
+                .addField("Role color", message.guild.member(user).displayHexColor , true)
+                .addField("Last message", lastmsg, false)
+                .setColor(0x00FFFF)
+                .setFooter(`Requested by ${message.author.tag}`)
+            message.channel.send(embed);
+            break;
 
 
 
