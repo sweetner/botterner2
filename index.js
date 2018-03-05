@@ -86,7 +86,8 @@ bot.on("message", function(message) {
       "\n **s!roll** -> rolls 2 die *hehe* \n" +
       "\n **s!ratewaifu** <mention> -> will rate a waifu out of 10 \n" +
       "\n **s!opgg <server> <summonername>** -> sends your op.gg link. \n" +
-      "\n **s!familytree** -> what to see what the family tree is? \n"
+      "\n **s!familytree** -> what to see what the family tree is? \n" +
+      "\n **s!profile** -> shows a user profile \n"
       , true)
       .addField("\n **Voice chat commands:** ",
       "\n **s!play <youtube link>** -> Joins a channel and plays a youtube video link. exits when done. \n "
