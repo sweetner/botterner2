@@ -417,7 +417,8 @@ case "love":
         message.channel.send(`${serverMembers[Math.floor(Math.random() * serverMembers.length)]}`);
       break;
   case "profile":
-      	    if (!message.mentions.users.first())
+	    let user = message.mentions.users.first();
+      	    if (!user)
                 user = message.author;
             let nickname = message.guild.member(user).nickname ? message.guild.member(user).nickname : "No nickname";
             let role = message.guild.member(user).highestRole ? message.guild.member(user).highestRole : "No role";
