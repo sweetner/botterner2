@@ -87,7 +87,8 @@ bot.on("message", function(message) {
       "\n **s!ratewaifu** <mention> -> will rate a waifu out of 10 \n" +
       "\n **s!opgg <server> <summonername>** -> sends your op.gg link. \n" +
       "\n **s!familytree** -> what to see what the family tree is? \n" +
-      "\n **s!profile** -> shows a user profile \n"
+      "\n **s!profile** -> shows a user profile \n" +
+      "\n **s!invite** -> sends an invite link of the bot for you to add to your server! \n"
       , true)
       .addField("\n **Voice chat commands:** ",
       "\n **s!play <youtube link>** -> Joins a channel and plays a youtube video link. exits when done. \n "
@@ -436,7 +437,12 @@ case "love":
                 .setFooter(`Requested by ${message.author.tag}`)
             message.channel.send(embed);
             break;
-
+    case "invite":
+		message.client.generateInvite('ADMINISTRATOR')
+            .then(link => {
+                message.channel.send(`Generated bot invite link: ${link}`)
+            });
+		  break;
 
 
 
