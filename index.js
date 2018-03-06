@@ -14,7 +14,7 @@ var solomuteauthor =0;
 
 bot.on('ready', () => {
   console.log('I am ready!');
-  bot.user.setActivity("s!help for commands!");
+  bot.user.setActivity(`s!help ; ${bot.guilds.size} servers`);
 });
 
 bot.on("message", function(message) {
